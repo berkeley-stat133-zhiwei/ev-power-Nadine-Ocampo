@@ -9,15 +9,36 @@ format: typst
 
 ```{r}
 
+install.packages("sf")
+install.packages("rnaturalearth")
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("tidyverse")
+
+
+library(sf)
+library(rnaturalearth)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
 ```
 
 ## **Part 1:** **Defining Research Question**
 
-Chosen Question:
+Chosen Question: How has renewable energy usage increased over the years in comparison with total usage in the US? How have prices change as renewable energy usage has increased, and at what rate does it increase at? Which state has shown the most growht in renewable energy usage over the years through EV registration?
 
 ## **Part 2: Data Preparation and Cleaning**
 
 ```{r}
+
+renew_use_2023 <- read_csv(file.choose())
+
+renew_use_2023 <- renew_use_2023 |>
+  mutate(state = str_replace_all(state, "^[Aa]l", "Alabama"))
+
+
+
+
 
 ```
 
